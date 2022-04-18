@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DungonsAndDragonsShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj": {}
+    "C:\\DndShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj": {}
   },
   "projects": {
-    "C:\\DungonsAndDragonsShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj": {
+    "C:\\DndShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DungonsAndDragonsShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj",
+        "projectUniqueName": "C:\\DndShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj",
         "projectName": "DungeonsAndDragons",
-        "projectPath": "C:\\DungonsAndDragonsShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj",
+        "projectPath": "C:\\DndShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj",
         "packagesPath": "C:\\Users\\Corey\\.nuget\\packages\\",
-        "outputPath": "C:\\DungonsAndDragonsShopping\\DungeonsAndDragons\\DungeonsAndDragons\\obj\\",
+        "outputPath": "C:\\DndShopping\\DungeonsAndDragons\\DungeonsAndDragons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Corey\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
