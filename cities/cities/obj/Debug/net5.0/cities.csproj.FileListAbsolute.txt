@@ -1,0 +1,16 @@
+C:\DungonsAndDragonsShopping\cities\cities\bin\Debug\net5.0\cities.exe
+C:\DungonsAndDragonsShopping\cities\cities\bin\Debug\net5.0\cities.deps.json
+C:\DungonsAndDragonsShopping\cities\cities\bin\Debug\net5.0\cities.runtimeconfig.json
+C:\DungonsAndDragonsShopping\cities\cities\bin\Debug\net5.0\cities.runtimeconfig.dev.json
+C:\DungonsAndDragonsShopping\cities\cities\bin\Debug\net5.0\cities.dll
+C:\DungonsAndDragonsShopping\cities\cities\bin\Debug\net5.0\cities.pdb
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.csproj.AssemblyReference.cache
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.GeneratedMSBuildEditorConfig.editorconfig
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.AssemblyInfoInputs.cache
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.AssemblyInfo.cs
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.csproj.CoreCompileInputs.cache
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.dll
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\refint\cities.dll
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.pdb
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\cities.genruntimeconfig.cache
+C:\DungonsAndDragonsShopping\cities\cities\obj\Debug\net5.0\ref\cities.dll
