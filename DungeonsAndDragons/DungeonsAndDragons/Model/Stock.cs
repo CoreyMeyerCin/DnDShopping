@@ -9,11 +9,20 @@ namespace DungeonsAndDragons.Model
         public string Type { get; set; }
         public int Gold { get; set; }
         public Dictionary<int,int> ItemIdAndSupply { get; set; }
-        public virtual int ItemId { get; set; }
+        public virtual List<int> ItemId { get; set; }
         public virtual IEnumerable<Item> Item { get; set; }
         public Stock() {
-            int count = 0;
-            ItemIdAndSupply.Add(ItemId, count++);
+            CountItems();
+        }
+        public void CountItems()
+        {
+            int ItemCount = 0;
+            for (int idx = 0; idx > this.ItemId.Count; idx++)
+            {
+                //Add if statement to add ItemCount++ instead of a new line when the item already exists
+                //inside of the Dictionary
+                ItemIdAndSupply.Add(ItemId[idx], ItemCount++);
+            } 
         }
     }
 }
