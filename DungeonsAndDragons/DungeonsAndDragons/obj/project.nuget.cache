@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WRlEHAo/fhY9auzTryb8FYuzG3UAUsZp4IOAAFzvJNp8L+hZMDXawmG38MPchue0uC+M+yO90CcUBtTfAn1s+Q==",
+  "dgSpecHash": "WNUeJ0qbeynFgHQsOGdWd/w0DsK0h8RL42GE7BDnffGKAbmaViFl789nomWXVZhc9LRyxp+R/pIru3gc2bRvZA==",
   "success": true,
-  "projectFilePath": "C:\\DndShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj",
+  "projectFilePath": "C:\\DungonsAndDragonsShopping\\DungeonsAndDragons\\DungeonsAndDragons\\DungeonsAndDragons.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Corey\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Corey\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
