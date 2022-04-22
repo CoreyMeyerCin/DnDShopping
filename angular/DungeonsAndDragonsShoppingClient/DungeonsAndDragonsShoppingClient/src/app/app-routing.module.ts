@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CityCreateComponent } from './classes/city/city-create/city-create.component';
 import { CityDetailComponent } from './classes/city/city-detail/city-detail.component';
 import { CityListComponent } from './classes/city/city-list/city-list.component';
-import { E404Component } from './core/e404/e404/e404.component';
+import { E404Component } from './core/e404/e404.component';
 
 const routes: Routes = [
   {path:"", redirectTo: "/home", pathMatch: "full"},
