@@ -8,8 +8,6 @@
         public string Description { get; set; }
         public int RarityValue { get; set; } = 0;
         public string RarityString { get; set; }
-        
-
 
         public Item() { }
         
