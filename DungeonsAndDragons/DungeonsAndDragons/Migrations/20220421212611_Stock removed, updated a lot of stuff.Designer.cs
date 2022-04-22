@@ -4,14 +4,16 @@ using DungeonsAndDragons.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DungeonsAndDragons.Migrations
 {
     [DbContext(typeof(AppDbcontext))]
-    partial class AppDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20220421212611_Stock removed, updated a lot of stuff")]
+    partial class Stockremovedupdatedalotofstuff
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,70 +127,6 @@ namespace DungeonsAndDragons.Migrations
                     b.ToTable("DungeonMasters");
                 });
 
-            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStore", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CityId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Gold")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NPCharacterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.HasIndex("NPCharacterId");
-
-                    b.ToTable("GeneralStores");
-                });
-
-            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStoreItems", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("GeneralStoreId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RarityString")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RarityValue")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GeneralStoreId");
-
-                    b.HasIndex("Id")
-                        .IsUnique();
-
-                    b.ToTable("GeneralStoresItems");
-                });
-
             modelBuilder.Entity("DungeonsAndDragons.Model.Item", b =>
                 {
                     b.Property<int>("Id")
@@ -200,6 +138,10 @@ namespace DungeonsAndDragons.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -222,6 +164,8 @@ namespace DungeonsAndDragons.Migrations
                         .IsUnique();
 
                     b.ToTable("Items");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Item");
                 });
 
             modelBuilder.Entity("DungeonsAndDragons.Model.NPCharacter", b =>
@@ -285,10 +229,17 @@ namespace DungeonsAndDragons.Migrations
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Gold")
                         .HasColumnType("int");
 
                     b.Property<int>("NPCharacterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -301,6 +252,30 @@ namespace DungeonsAndDragons.Migrations
                     b.HasIndex("NPCharacterId");
 
                     b.ToTable("Shops");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Shop");
+                });
+
+            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStoreItems", b =>
+                {
+                    b.HasBaseType("DungeonsAndDragons.Model.Item");
+
+                    b.Property<int?>("GeneralStoreId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasIndex("GeneralStoreId");
+
+                    b.HasDiscriminator().HasValue("GeneralStoreItems");
+                });
+
+            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStore", b =>
+                {
+                    b.HasBaseType("DungeonsAndDragons.Model.Shop");
+
+                    b.HasDiscriminator().HasValue("GeneralStore");
                 });
 
             modelBuilder.Entity("DungeonsAndDragons.Model.Character", b =>
@@ -338,24 +313,6 @@ namespace DungeonsAndDragons.Migrations
                         .IsRequired();
 
                     b.Navigation("Player");
-                });
-
-            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStore", b =>
-                {
-                    b.HasOne("DungeonsAndDragons.Model.NPCharacter", "NPCharacter")
-                        .WithMany()
-                        .HasForeignKey("NPCharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("NPCharacter");
-                });
-
-            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStoreItems", b =>
-                {
-                    b.HasOne("DungeonsAndDragons.Model.GeneralStore", null)
-                        .WithMany("Items")
-                        .HasForeignKey("GeneralStoreId");
                 });
 
             modelBuilder.Entity("DungeonsAndDragons.Model.Item", b =>
@@ -402,6 +359,13 @@ namespace DungeonsAndDragons.Migrations
                     b.Navigation("NPCharacter");
                 });
 
+            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStoreItems", b =>
+                {
+                    b.HasOne("DungeonsAndDragons.Model.GeneralStore", null)
+                        .WithMany("Items")
+                        .HasForeignKey("GeneralStoreId");
+                });
+
             modelBuilder.Entity("DungeonsAndDragons.Model.Campaign", b =>
                 {
                     b.Navigation("Character");
@@ -425,14 +389,14 @@ namespace DungeonsAndDragons.Migrations
                     b.Navigation("Shop");
                 });
 
-            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStore", b =>
-                {
-                    b.Navigation("Items");
-                });
-
             modelBuilder.Entity("DungeonsAndDragons.Model.Player", b =>
                 {
                     b.Navigation("Character");
+                });
+
+            modelBuilder.Entity("DungeonsAndDragons.Model.GeneralStore", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

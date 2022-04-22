@@ -11,49 +11,47 @@ namespace DungeonsAndDragons.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShopsController : ControllerBase
+    public class GeneralStoresController : ControllerBase
     {
         private readonly AppDbcontext _context;
 
-        public ShopsController(AppDbcontext context)
+        public GeneralStoresController(AppDbcontext context)
         {
             _context = context;
         }
 
-        // GET: api/Shops
+        // GET: api/GeneralStores
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Shop>>> GetShops()
+        public async Task<ActionResult<IEnumerable<GeneralStore>>> GetGeneralStores()
         {
-            return await _context.Shops
-                .Include(x=>x.NPCharacter)
-                .ToListAsync();
+            return await _context.GeneralStores.ToListAsync();
         }
 
-        // GET: api/Shops/5
+        // GET: api/GeneralStores/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Shop>> GetShop(int id)
+        public async Task<ActionResult<GeneralStore>> GetGeneralStore(int id)
         {
-            var shop = await _context.Shops.FindAsync(id);
+            var generalStore = await _context.GeneralStores.FindAsync(id);
 
-            if (shop == null)
+            if (generalStore == null)
             {
                 return NotFound();
             }
 
-            return shop;
+            return generalStore;
         }
 
-        // PUT: api/Shops/5
+        // PUT: api/GeneralStores/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutShop(int id, Shop shop)
+        public async Task<IActionResult> PutGeneralStore(int id, GeneralStore generalStore)
         {
-            if (id != shop.Id)
+            if (id != generalStore.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(shop).State = EntityState.Modified;
+            _context.Entry(generalStore).State = EntityState.Modified;
 
             try
             {
@@ -61,7 +59,7 @@ namespace DungeonsAndDragons.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShopExists(id))
+                if (!GeneralStoreExists(id))
                 {
                     return NotFound();
                 }
@@ -74,36 +72,36 @@ namespace DungeonsAndDragons.Controllers
             return NoContent();
         }
 
-        // POST: api/Shops
+        // POST: api/GeneralStores
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Shop>> PostShop(Shop shop)
+        public async Task<ActionResult<GeneralStore>> PostGeneralStore(GeneralStore generalStore)
         {
-            _context.Shops.Add(shop);
+            _context.GeneralStores.Add(generalStore);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetShop", new { id = shop.Id }, shop);
+            return CreatedAtAction("GetGeneralStore", new { id = generalStore.Id }, generalStore);
         }
 
-        // DELETE: api/Shops/5
+        // DELETE: api/GeneralStores/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteShop(int id)
+        public async Task<IActionResult> DeleteGeneralStore(int id)
         {
-            var shop = await _context.Shops.FindAsync(id);
-            if (shop == null)
+            var generalStore = await _context.GeneralStores.FindAsync(id);
+            if (generalStore == null)
             {
                 return NotFound();
             }
 
-            _context.Shops.Remove(shop);
+            _context.GeneralStores.Remove(generalStore);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ShopExists(int id)
+        private bool GeneralStoreExists(int id)
         {
-            return _context.Shops.Any(e => e.Id == id);
+            return _context.GeneralStores.Any(e => e.Id == id);
         }
     }
 }

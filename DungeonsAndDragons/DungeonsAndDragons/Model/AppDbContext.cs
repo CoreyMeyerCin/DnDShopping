@@ -11,7 +11,8 @@ namespace DungeonsAndDragons.Model
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Player> Players { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
-        public virtual DbSet<Stock> Stocks { get; set; }
+        public virtual DbSet<GeneralStore> GeneralStores { get; set; }
+        public virtual DbSet<GeneralStoreItems> GeneralStoresItems { get; set; }
 
 
 
@@ -43,7 +44,9 @@ namespace DungeonsAndDragons.Model
 
             builder.Entity<Item>(e => e.HasIndex(x => x.Id).IsUnique(true));
 
-            builder.Entity<Stock>(e => e.HasIndex(x => x.Id).IsUnique(true));
+            builder.Entity<GeneralStore>(e => e.HasIndex(x => x.Id).IsUnique(true));
+            builder.Entity<GeneralStoreItems>(e => e.HasIndex(x => x.Id).IsUnique(true));
+
 
 
 
