@@ -44,9 +44,6 @@ namespace DungeonsAndDragons.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CampaignId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
@@ -60,8 +57,6 @@ namespace DungeonsAndDragons.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CampaignId");
 
                     b.HasIndex("CityId");
 
@@ -305,10 +300,6 @@ namespace DungeonsAndDragons.Migrations
 
             modelBuilder.Entity("DungeonsAndDragons.Model.Character", b =>
                 {
-                    b.HasOne("DungeonsAndDragons.Model.Campaign", null)
-                        .WithMany("Character")
-                        .HasForeignKey("CampaignId");
-
                     b.HasOne("DungeonsAndDragons.Model.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
@@ -404,8 +395,6 @@ namespace DungeonsAndDragons.Migrations
 
             modelBuilder.Entity("DungeonsAndDragons.Model.Campaign", b =>
                 {
-                    b.Navigation("Character");
-
                     b.Navigation("City");
 
                     b.Navigation("NPCharacter");

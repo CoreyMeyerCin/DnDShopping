@@ -9,7 +9,6 @@ namespace DungeonsAndDragons.Model
         public int DungeonMasterId { get; set; }
         public virtual IEnumerable<Player> Players { get;}
         public virtual IEnumerable<NPCharacter> NPCharacter { get; set; }
-        public virtual IEnumerable<Character> Character { get; set; }
         public virtual IEnumerable<City> City { get; set; }
 
         public Campaign() { }
