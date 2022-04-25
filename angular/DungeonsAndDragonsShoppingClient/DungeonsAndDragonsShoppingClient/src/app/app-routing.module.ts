@@ -12,10 +12,18 @@ import { CityCreateComponent } from './classes/city/city-create/city-create.comp
 import { CityDetailComponent } from './classes/city/city-detail/city-detail.component';
 import { CityEditComponent } from './classes/city/city-edit/city-edit.component';
 import { CityListComponent } from './classes/city/city-list/city-list.component';
+import { ItemCreateComponent } from './classes/item/item-create/item-create.component';
+import { ItemDetailComponent } from './classes/item/item-detail/item-detail.component';
+import { ItemEditComponent } from './classes/item/item-edit/item-edit.component';
+import { ItemListComponent } from './classes/item/item-list/item-list.component';
 import { NpcharacterCreateComponent } from './classes/npcharacter/npcharacter-create/npcharacter-create.component';
 import { NpcharacterDetailComponent } from './classes/npcharacter/npcharacter-detail/npcharacter-detail.component';
 import { NpcharacterEditComponent } from './classes/npcharacter/npcharacter-edit/npcharacter-edit.component';
 import { NpcharacterListComponent } from './classes/npcharacter/npcharacter-list/npcharacter-list.component';
+import { PlayerCreateComponent } from './classes/player/player-create/player-create.component';
+import { PlayerDetailComponent } from './classes/player/player-detail/player-detail.component';
+import { PlayerEditComponent } from './classes/player/player-edit/player-edit.component';
+import { PlayerListComponent } from './classes/player/player-list/player-list.component';
 import { ShopCreateComponent } from './classes/shop/shop-create/shop-create.component';
 import { ShopDetailComponent } from './classes/shop/shop-detail/shop-detail.component';
 import { ShopEditComponent } from './classes/shop/shop-edit/shop-edit.component';
@@ -53,6 +61,16 @@ const routes: Routes = [
   {path: "character/create", component:CharacterCreateComponent},
   {path: "character/edit:id", component:CharacterEditComponent},
   {path: "character/detail:id", component:CharacterDetailComponent},
+
+  {path: "item/list", component:ItemListComponent},
+  {path: "item/create", component:ItemCreateComponent},
+  {path: "item/edit:id", component:ItemEditComponent},
+  {path: "item/detail:id", component:ItemDetailComponent},
+
+  {path: "player/list", component:PlayerListComponent},
+  {path: "player/create", component:PlayerCreateComponent},
+  {path: "player/edit:id", component:PlayerEditComponent},
+  {path: "player/detail:id", component:PlayerDetailComponent},
 
   {path: "**", component:E404Component}
 ];
