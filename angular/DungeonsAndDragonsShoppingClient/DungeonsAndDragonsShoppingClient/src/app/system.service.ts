@@ -10,6 +10,7 @@ import { PlayerService } from './classes/player/player.service';
 export class SystemService {
 
   baseUrl:string='http://localhost/8270/api/players';
+
   _player!:Player|null;
 
   constructor(
@@ -17,5 +18,16 @@ export class SystemService {
     private router: Router,
     public playersvc: PlayerService
   ) { }
-    getLoggedInPlayer
+    getLoggedInPlayer():Player|null{
+      return this._player;
+    }
+    setLoggedInPlayer(player:Player):void{
+      this._player=player;
+    }
+    clearLoggedInPlayer():void{
+      this._player=null;
+    }
+    //checkIfLoggedIn():void{
+    //this.router.navigate('/login');
+    //}
 }

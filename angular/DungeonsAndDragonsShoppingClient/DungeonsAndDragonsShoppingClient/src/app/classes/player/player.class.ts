@@ -5,7 +5,5 @@ export class Player{
     name:string="";
     characters:Character[]=[];
     birthdate:string="mm/dd/yy";
-    constructor(){
-        
-    }
+    constructor(){}
 }

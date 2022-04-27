@@ -22,7 +22,7 @@ export class PlayerService {
     return this.http.post(`${this.baseUrl}`, player) as Observable<Player>;
   }
   change(player:Player):Observable<Player>{
-    return this.http.put(`${this.baseUrl}`, player) as Observable<any>;
+    return this.http.put(`${this.baseUrl}`, player) as Observable<Player>;
   }
   remove(id:number): Observable<any>{
     return this.http.delete(`${this.baseUrl}/${id}`) as Observable<any>;

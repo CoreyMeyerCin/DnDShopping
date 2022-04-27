@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../player.class';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -8,10 +9,19 @@ import { PlayerService } from '../player.service';
 })
 export class PlayerListComponent implements OnInit {
 
+ players:Player[]=[]
   constructor(private playersvc: PlayerService) { }
 
   ngOnInit(): void {
-    
+    this.playersvc.list().subscribe({
+      next:(res)=>{
+        this.players=res;
+        error:(err: any)=>{
+          console.error(err);
+        }
+
+      }
+    })
   }
 
 }
