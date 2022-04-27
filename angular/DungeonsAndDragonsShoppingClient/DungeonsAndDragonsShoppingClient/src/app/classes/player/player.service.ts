@@ -27,7 +27,7 @@ export class PlayerService {
   remove(id:number): Observable<any>{
     return this.http.delete(`${this.baseUrl}/${id}`) as Observable<any>;
   }
-  login(login:string, password:string): Observable<Player>{
-    return this.http.get(`${this.baseUrl}/${login}/${password}`) as Observable<Player>;
-  }
+  // login(login:string, password:string): Observable<Player>{
+  //   return this.http.get(`${this.baseUrl}/${login}/${password}`) as Observable<Player>;
+  // }
 }

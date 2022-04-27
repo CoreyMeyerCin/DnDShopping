@@ -11,7 +11,7 @@ export class PlayerListComponent implements OnInit {
   constructor(private playersvc: PlayerService) { }
 
   ngOnInit(): void {
-    this
+    
   }
 
 }
