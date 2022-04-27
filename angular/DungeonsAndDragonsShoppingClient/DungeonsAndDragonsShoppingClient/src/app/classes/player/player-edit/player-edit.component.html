@@ -1,3 +1,36 @@
 
 <app-menu></app-menu>
+<div>
+    <span id="pageTitle">Player Change</span>
+    <table *ngIf="player" class="table table-sm">
+        <tr>
+            <th>Id:</th>
+            <td>
+                <input [(ngModel)]="player.id"type="number" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th>Name:</th>
+            <td>
+                <input [(ngModel)]="player.name"type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Characters:</th>
+            <td>
+                <input [(ngModel)]="player.characters"type="text" readonly>
+                <!-- Change this to a ngFor loop that only displays all characters but can not edit them -->
+            </td>
+        </tr>
+        <tr>
+            <th>Birthdate(mm/dd):</th>
+            <td>
+                <input [(ngModel)]="player.birthdate"type="text">
+            </td>
+        </tr>
+    </table>
+    <div>
+        <button (click)="save()" class="btn btn-primary">Edit</button>
+    </div>
+</div>
 <p>player-edit works!</p>

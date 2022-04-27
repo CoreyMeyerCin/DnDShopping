@@ -39,38 +39,38 @@ const routes: Routes = [
 
   {path: "city/list", component:CityListComponent},
   {path: "city/create", component:CityCreateComponent},
-  {path: "city/edit:id", component:CityEditComponent},
-  {path: "city/detail:id", component:CityDetailComponent},
+  {path: "city/edit/:id", component:CityEditComponent},
+  {path: "city/detail/:id", component:CityDetailComponent},
 
   {path: "shop/list", component:ShopListComponent},
   {path: "shop/create", component:ShopCreateComponent},
-  {path: "shop/edit:id", component:ShopEditComponent},
-  {path: "shop/detail:id", component:ShopDetailComponent},
+  {path: "shop/edit/:id", component:ShopEditComponent},
+  {path: "shop/detail/:id", component:ShopDetailComponent},
 
   {path: "npcharacter/list", component:NpcharacterListComponent},
   {path: "npcharacter/create", component:NpcharacterCreateComponent},
-  {path: "npcharacter/edit:id", component:NpcharacterEditComponent},
-  {path: "npcharacter/detail:id", component:NpcharacterDetailComponent},
+  {path: "npcharacter/edit/:id", component:NpcharacterEditComponent},
+  {path: "npcharacter/detail/:id", component:NpcharacterDetailComponent},
 
   {path: "campaign/list", component:CampaignListComponent},
   {path: "campaign/create", component:CampaignCreateComponent},
-  {path: "campaign/edit:id", component:CampaignEditComponent},
-  {path: "campaign/detail:id", component:CampaignDetailComponent},
+  {path: "campaign/edit/:id", component:CampaignEditComponent},
+  {path: "campaign/detail/:id", component:CampaignDetailComponent},
 
   {path: "character/list", component:CharacterListComponent},
   {path: "character/create", component:CharacterCreateComponent},
-  {path: "character/edit:id", component:CharacterEditComponent},
-  {path: "character/detail:id", component:CharacterDetailComponent},
+  {path: "character/edit/:id", component:CharacterEditComponent},
+  {path: "character/detail/:id", component:CharacterDetailComponent},
 
   {path: "item/list", component:ItemListComponent},
   {path: "item/create", component:ItemCreateComponent},
-  {path: "item/edit:id", component:ItemEditComponent},
-  {path: "item/detail:id", component:ItemDetailComponent},
+  {path: "item/edit/:id", component:ItemEditComponent},
+  {path: "item/detail/:id", component:ItemDetailComponent},
 
   {path: "player/list", component:PlayerListComponent},
   {path: "player/create", component:PlayerCreateComponent},
-  {path: "player/edit:id", component:PlayerEditComponent},
-  {path: "player/detail:id", component:PlayerDetailComponent},
+  {path: "player/edit/:id", component:PlayerEditComponent},
+  {path: "player/detail/:id", component:PlayerDetailComponent},
 
   {path: "**", component:E404Component}
 ];
