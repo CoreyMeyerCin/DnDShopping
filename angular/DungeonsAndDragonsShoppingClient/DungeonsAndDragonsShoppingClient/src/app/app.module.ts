@@ -36,6 +36,7 @@ import { ItemListComponent } from './classes/item/item-list/item-list.component'
 import { ItemEditComponent } from './classes/item/item-edit/item-edit.component';
 import { ItemCreateComponent } from './classes/item/item-create/item-create.component';
 import { ItemDetailComponent } from './classes/item/item-detail/item-detail.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -75,7 +76,7 @@ import { ItemDetailComponent } from './classes/item/item-detail/item-detail.comp
   ],
   imports: [
     BrowserModule, FormsModule,
-    AppRoutingModule
+    AppRoutingModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
