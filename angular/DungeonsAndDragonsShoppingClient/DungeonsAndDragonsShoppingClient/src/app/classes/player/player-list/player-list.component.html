@@ -1,1 +1,29 @@
 <app-menu></app-menu><p>player-list works!</p>
+<div>
+    <span id=""pageTitle>Player List</span> |
+    <a routerLink = "/player/create">New Player</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Chracters</th>
+            <th>Birthdate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of players">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.characters}}</td>
+            <td>{{p.birthdate}}</td>
+            <td>
+                <a routerLink="/player/detail/{{p.id}}">Details</a>
+                <a routerLink="/player/edit/{{p.id}}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

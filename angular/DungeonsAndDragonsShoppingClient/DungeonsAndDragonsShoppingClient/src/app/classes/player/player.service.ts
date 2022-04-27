@@ -8,7 +8,7 @@ import { Player } from './player.class';
   providedIn: 'root'
 })
 export class PlayerService {
- baseUrl = 'http//localhost:8270/api/players'
+ baseUrl = 'http://localhost:8270/api/players'
 
   constructor(public http: HttpClient) { }
 

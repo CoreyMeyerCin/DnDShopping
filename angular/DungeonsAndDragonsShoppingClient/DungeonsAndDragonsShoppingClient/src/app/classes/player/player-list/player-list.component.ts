@@ -16,6 +16,7 @@ export class PlayerListComponent implements OnInit {
     this.playersvc.list().subscribe({
       next:(res)=>{
         this.players=res;
+        console.debug("Players",res);
         error:(err: any)=>{
           console.error(err);
         }
