@@ -16,7 +16,7 @@ export class PlayerEditComponent implements OnInit {
     private router:Router
   ) { }
 
-
+  //temp note:
   //This is not working atm because Character[] is not allowed to be null in the C# Player.Model
   save():void{
     this.playersvc.change(this.player).subscribe({
