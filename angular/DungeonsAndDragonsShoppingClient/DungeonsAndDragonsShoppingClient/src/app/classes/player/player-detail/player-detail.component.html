@@ -1,3 +1,14 @@
 
 <app-menu></app-menu>
-<p>player-detail works!</p>
+<div>
+    <span id="pageTitle">Player Detail</span>
+    <table *ngIf="player" class="table table-sm">
+        <tr>
+            <th>Id:</th>
+            <td>
+                <input [(ngModel)]="player.id"type="number" readyonly>
+            </td>
+        </tr>
+    </table>
+    
+</div>
